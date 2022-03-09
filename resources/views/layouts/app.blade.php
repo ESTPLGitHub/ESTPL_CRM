@@ -40,7 +40,7 @@
                     <li class="active">
                         <a href="#"><i class="menu-icon fa fa-laptop"></i><span>Dashboard</span> </a>
                     </li>
-                    @role('System Admin')
+                    @role('Super Admin')
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i><span>Create Master</span></a>
                         <ul class="sub-menu children dropdown-menu">
