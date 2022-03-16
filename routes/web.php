@@ -25,8 +25,15 @@ Auth::routes();
 
 Route::get('/dashboard', 'HomeController@index')->name('home');
 
-Route::resource('users', 'UserController');
-Route::resource('forms', 'Formelements');
-Route::resource('roles', 'RoleController');
-Route::resource('permissions', 'PermissionController');
-Route::resource('posts', 'PostController');
+// Route::resource('users', 'UserController');
+// Route::resource('forms', 'Formelements');
+// Route::resource('roles', 'RoleController');
+// Route::resource('permissions', 'PermissionController');
+// Route::resource('posts', 'PostController');
+
+Route::group(['middleware' => ['auth']], function() {
+  Route::resource('roles','RoleController');
+  Route::resource('users','UserController');
+  Route::resource('forms', 'Formelements');
+  //Route::resource('products','ProductController');
+});
