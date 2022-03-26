@@ -40,26 +40,64 @@
                     <li class="active">
                         <a href="#"><i class="menu-icon fa fa-laptop"></i><span>Dashboard</span> </a>
                     </li>
-                    @role('System Admin')
+
+                    @role('Admin')
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i><span>Create Master</span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i><span>Organisation Management</span></a>
                         <ul class="sub-menu children dropdown-menu">
-                           <li><a href="{{ route('users.index') }}"><i class="fa fa-angle-double-right"></i></i><span>Users </span></a></li>                           
-                            <li><a href="{{ route('users.create') }}"><i class="fa fa-angle-double-right"></i></i><span>Create User</span></a></li>
-                            <li><a href="{{ route('roles.index') }}"><i class="fa fa-angle-double-right"></i></i><span>Roles</span></a></li>
-                            
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i><span>Search User</span></a></li>
+                                                   
+                            <li><a href="{{ route('users.index') }}"><i class="fa fa-angle-double-right"></i></i><span>Create Organisation</span></a></li>
                         </ul>
                     </li>
                     @endrole
+                    @role('Admin|Managing Director')
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i><span>Elements</span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i><span>User Management</span></a>
+                        <ul class="sub-menu children dropdown-menu">
+                                                   
+                            <li><a href="{{ route('users.index') }}"><i class="fa fa-angle-double-right"></i></i><span>Create User</span></a></li>
+                            <li><a href="{{ route('roles.index') }}"><i class="fa fa-angle-double-right"></i></i><span>Create Roles</span></a></li>
+                            <li><a href="{{ route('permissions.index') }}"><i class="fa fa-angle-double-right"></i></i><span>Create Permission</span></a></li>
+            
+                        </ul>
+                    </li>
+                    @endrole
+                    @role('Admin')
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i><span>Client Management</span></a>
+                        <ul class="sub-menu children dropdown-menu">
+                           <li><a href="{{ route('users.index') }}"><i class="fa fa-angle-double-right"></i></i><span>View Client </span></a></li>                           
+                           <li><a href="{{ route('users.create') }}"><i class="fa fa-angle-double-right"></i></i><span>Create Client</span></a></li>
+                        </ul>
+                    </li>
+                    @endrole
+                    @role('Admin')
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i><span>Project Management</span></a>
+                        <ul class="sub-menu children dropdown-menu">
+                           <li><a href="{{ route('users.index') }}"><i class="fa fa-angle-double-right"></i></i><span>View Project </span></a></li>                           
+                           <li><a href="{{ route('users.create') }}"><i class="fa fa-angle-double-right"></i></i><span>Create Project</span></a></li>
+                        </ul>
+                    </li>
+                    @endrole
+                    @role('{{ Auth::user()->name }}')
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i><span>Support Management</span></a>
+                        <ul class="sub-menu children dropdown-menu">
+                           <li><a href="{{ route('users.index') }}"><i class="fa fa-angle-double-right"></i></i><span>View Project </span></a></li>                           
+                           <li><a href="{{ route('users.create') }}"><i class="fa fa-angle-double-right"></i></i><span>Create Project</span></a></li>
+                        </ul>
+                    </li>
+                    @endrole
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i><span>Reports</span></a>
                         <ul class="sub-menu children dropdown-menu">
                            <li><a href="{{ route('forms.create') }}"><i class="fa fa-angle-double-right"></i></i><span>Create New Form Elements</span></a></li>                           
                             <li><a href="{{ route('forms.index') }}"><i class="fa fa-angle-double-right"></i></i><span>View Form Elements</span></a></li>
                         </ul>
                     </li>
-                    @if(auth()->user()->can('create project'))
+                    <!-- @role('Vendor User')
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i> <span>Project details</span></a>
                         <ul class="sub-menu children dropdown-menu">
@@ -67,7 +105,7 @@
                             <li><a href="#"><i class="fa fa-angle-double-right"></i><span>Enter Individual Engagement details</span></a></li>
                         </ul>
                     </li>
-                    @endif
+                    @endrole
                     @if(auth()->user()->can('upload'))
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i><span>Upload module</span>
@@ -97,7 +135,7 @@
                         <a href="#"> <i class="menu-icon ti-email"></i><span>Project Monitoring </span></a>
                         
                     </li>
-                    @endrole
+                    @endrole -->
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>

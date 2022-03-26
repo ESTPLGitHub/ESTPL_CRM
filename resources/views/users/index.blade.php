@@ -8,13 +8,15 @@
     <div class="col-lg-12">
     <div class="card-box">
     <h3> User Administration <a href="{{ route('roles.index') }}" class="btn btn-default pull-right">Roles</a>
-    <a href="{{ route('permissions.index') }}" class="btn btn-default pull-right">Permissions</a></h3>
+    <!-- <a href="" class="btn btn-default pull-right">Permissions</a> -->
+</h3>
     <hr>
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
 
             <thead>
                 <tr>
+                    <th>Sl No</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Date/Time Added</th>
@@ -24,9 +26,12 @@
             </thead>
 
             <tbody>
+                @php 
+                $i = 1;
+                @endphp
                 @foreach ($users as $user)
                 <tr>
-
+                    <td> {{ $i }} </td>
                     <td>{{ $user->fullname }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->created_at->format('F d, Y h:ia') }}</td>
@@ -40,6 +45,9 @@
 
                     </td>
                 </tr>
+                @php 
+                $i++;
+                @endphp
                 @endforeach
             </tbody>
 
