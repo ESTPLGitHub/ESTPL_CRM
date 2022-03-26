@@ -97,45 +97,7 @@
                             <li><a href="{{ route('forms.index') }}"><i class="fa fa-angle-double-right"></i></i><span>View Form Elements</span></a></li>
                         </ul>
                     </li>
-                    <!-- @role('Vendor User')
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i> <span>Project details</span></a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i><span>Enter Project details</span></a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i><span>Enter Individual Engagement details</span></a></li>
-                        </ul>
-                    </li>
-                    @endrole
-                    @if(auth()->user()->can('upload'))
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i><span>Upload module</span>
-</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i><span>Upload Document</span></a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i><span>Upload Photo</span></a></li>
-                        </ul>
-                    </li>
-                    @endif
-                    @role('System Admin')
-                    <li>
-                        <a href="#"> <i class="menu-icon ti-email"></i><span>Document Management</span></a>
-                        
-                    </li>
-                    @endrole
-                    @role('System Admin')
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i><span>Report</span></a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i><span>MIS Reports</span></a></li>
-                        </ul>
-                    </li>
-                    @endrole
-                    @role('System Admin')
-                    <li>
-                        <a href="#"> <i class="menu-icon ti-email"></i><span>Project Monitoring </span></a>
-                        
-                    </li>
-                    @endrole -->
+                   
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
