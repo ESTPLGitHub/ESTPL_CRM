@@ -61,6 +61,7 @@
             
                         </ul>
                     </li>
+
                     @endrole
                     @role('Admin')
                     <li class="menu-item-has-children dropdown">
@@ -98,8 +99,20 @@
                         </ul>
                     </li>
                    
+
+                    @endrole
+                    @role('Admin')
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i><span>Client Management</span></a>
+                        <ul class="sub-menu children dropdown-menu">
+                           <li><a href="{{ route('users.index') }}"><i class="fa fa-angle-double-right"></i></i><span>View Client </span></a></li>                           
+                           <li><a href="{{ route('users.create') }}"><i class="fa fa-angle-double-right"></i></i><span>Create Client</span></a></li>
+                        </ul>
+                    </li>
+                    @endrole
+                    @role('Admin')
                 </ul>
-            </div><!-- /.navbar-collapse -->
+            </div>
         </nav>
     </aside>
     <!-- /#left-panel -->
