@@ -40,6 +40,7 @@
                     <li class="active">
                         <a href="#"><i class="menu-icon fa fa-laptop"></i><span>Dashboard</span> </a>
                     </li>
+
                     @role('Admin')
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i><span>Organisation Management</span></a>
@@ -60,6 +61,45 @@
             
                         </ul>
                     </li>
+
+                    @endrole
+                    @role('Admin')
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i><span>Client Management</span></a>
+                        <ul class="sub-menu children dropdown-menu">
+                           <li><a href="{{ route('users.index') }}"><i class="fa fa-angle-double-right"></i></i><span>View Client </span></a></li>                           
+                           <li><a href="{{ route('users.create') }}"><i class="fa fa-angle-double-right"></i></i><span>Create Client</span></a></li>
+                        </ul>
+                    </li>
+                    @endrole
+                    @role('Admin')
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i><span>Project Management</span></a>
+                        <ul class="sub-menu children dropdown-menu">
+                           <li><a href="{{ route('users.index') }}"><i class="fa fa-angle-double-right"></i></i><span>View Project </span></a></li>                           
+                           <li><a href="{{ route('users.create') }}"><i class="fa fa-angle-double-right"></i></i><span>Create Project</span></a></li>
+                        </ul>
+                    </li>
+                    @endrole
+                    @role('{{ Auth::user()->name }}')
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i><span>Support Management</span></a>
+                        <ul class="sub-menu children dropdown-menu">
+                           <li><a href="{{ route('users.index') }}"><i class="fa fa-angle-double-right"></i></i><span>View Project </span></a></li>                           
+                           <li><a href="{{ route('users.create') }}"><i class="fa fa-angle-double-right"></i></i><span>Create Project</span></a></li>
+                        </ul>
+                    </li>
+                    @endrole
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i><span>Reports</span></a>
+                        <ul class="sub-menu children dropdown-menu">
+                           <li><a href="{{ route('forms.create') }}"><i class="fa fa-angle-double-right"></i></i><span>Create New Form Elements</span></a></li>                           
+                            <li><a href="{{ route('forms.index') }}"><i class="fa fa-angle-double-right"></i></i><span>View Form Elements</span></a></li>
+                        </ul>
+                    </li>
+                   
+
                     @endrole
                     @role('Admin')
                     <li class="menu-item-has-children dropdown">
@@ -72,7 +112,7 @@
                     @endrole
                     @role('Admin')
                 </ul>
-            </div><!-- /.navbar-collapse -->
+            </div>
         </nav>
     </aside>
     <!-- /#left-panel -->
